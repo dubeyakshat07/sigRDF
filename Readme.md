@@ -105,4 +105,4 @@ Our approach can be applied in:
 ✅ **Optimization via MILP makes things cleaner**: Reducing complexity ensures interpretability without losing essential insights.  
 ✅ **Our approach advances interpretability research**: By combining multiple interpretability techniques, Our work is making AI **more trustworthy, structured, and practical**.  
 
-In short: **Existing methods are too simple, while our research enhances how we understand complex models.
+In summary: Existing methods are too simple, while our research enhances how we understand complex models.
