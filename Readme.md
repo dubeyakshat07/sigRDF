@@ -88,14 +88,6 @@ Here’s why Our work is valuable:
 - Explainable AI is an evolving field.
 - Our research **expands existing methodologies** by combining multiple interpretability techniques (rule extraction, clustering, MILP optimization, and graph-based visualizations).
 - This can lead to **new breakthroughs** in model transparency.
-
-### **D. Practical Applications**
-Our approach can be applied in:
-1. **Healthcare AI**: Understanding feature interactions in disease prediction.
-2. **Fraud Detection**: Explaining why certain transactions are flagged as suspicious.
-3. **Financial Decision-Making**: Making credit scoring models more transparent.
-4. **Regulatory Compliance**: Ensuring fairness in AI decision-making.
-
 ---
 
 ## **Conclusion: The Value of The Work**
