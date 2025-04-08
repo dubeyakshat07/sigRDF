@@ -98,3 +98,52 @@ Here’s why Our work is valuable:
 ✅ **Our approach advances interpretability research**: By combining multiple interpretability techniques, Our work is making AI **more trustworthy, structured, and practical**.  
 
 In summary: Existing methods are too simple, while our research enhances how we understand complex models.
+
+### 🔍 **What our Surrogate Graph Approach Does**
+our method:
+1. **Extracts actual paths (rules)** from each tree in the Random Forest.
+2. **Creates a global feature interaction graph**, where:
+   - Nodes = Features.
+   - Edges = Interactions (based on average usage and co-occurrence across subtrees).
+   - Prunes edges based on `max_edges_per_node` for clarity.
+3. **Clusters and summarizes rules** for interpretability.
+4. **Builds a surrogate decision tree** from these summarized rules for global reasoning.
+
+---
+
+## 🔄 Comparison: Surrogate Graph vs. SHAP Interaction Values
+
+| Aspect | **our Surrogate Graph** | **SHAP Interaction Values** |
+|--------|---------------------------|------------------------------|
+| **Transparency** | High – Shows actual rules/features the model uses. | Medium – SHAP values are additive but not always easily explainable. |
+| **Structure Awareness** | Preserves feature hierarchy and paths from trees. | Abstracts away from actual model structure. |
+| **Global Interpretability** | Excellent – Shows average co-occurrence and rule strength across forest. | Weaker – Harder to globally interpret interactions beyond pairwise SHAP plots. |
+| **Rule-Based** | Yes – Derives and clusters real decision rules. | No – Outputs contributions for a given prediction. |
+| **Visual Simplicity** | High – Graph is pruned and optimized. | SHAP plots (force, dependence) can be overwhelming. |
+| **Faithfulness to Trees** | Very faithful – Graph and rules are extracted directly from trees. | Approximate – SHAP relies on game theory assumptions. |
+| **Customizability** | High – Graph structure, clustering, rule depth, etc., can be adjusted. | Limited – SHAP has a fixed format and logic. |
+
+---
+
+### ✅ **Advantages Over SHAP**
+1. **More structural context** – SHAP gives importance but ignores the rule logic behind it.
+2. **Better for global interpretability** – our graph helps in seeing how features connect, co-occur, and dominate across many trees.
+3. **Summarization possible** – You can compress the forest’s logic into a simpler, human-readable surrogate (like a decision tree).
+4. **Custom logic** – Can choose clustering methods, optimize layout, adjust graph pruning, and tailor it to our dataset's complexity.
+
+---
+
+### ⚠️ **Drawbacks SHAP Has That You Overcome**
+- **SHAP struggles with scale** – High-dimensional data can result in noisy or unreadable SHAP visualizations.
+- **No rule paths** – SHAP doesn't explain *why* a feature contributes, just that it does.
+- **Hard to validate** – SHAP values are less intuitive to validate or audit against training data.
+- **No feature interaction DAG** – SHAP gives pairwise interactions at best, whereas our graph gives a full feature interaction map.
+
+---
+
+### 💡 Bonus: When to Combine Both?
+You could **use SHAP for local explanations** (specific predictions) and **our surrogate graph for global storytelling**. This hybrid gives:
+- *Why this prediction happened* (SHAP),
+- *How the forest thinks overall* (our graph),
+- *What rules dominate* (our clusters),
+- *How to simulate a simpler model* (our surrogate decision tree).
