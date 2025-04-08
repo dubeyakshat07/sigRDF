@@ -133,17 +133,8 @@ our method:
 
 ---
 
-### ⚠️ **Drawbacks SHAP Has That You Overcome**
+### ⚠️ **Drawbacks SHAP Has That We Overcome**
 - **SHAP struggles with scale** – High-dimensional data can result in noisy or unreadable SHAP visualizations.
 - **No rule paths** – SHAP doesn't explain *why* a feature contributes, just that it does.
 - **Hard to validate** – SHAP values are less intuitive to validate or audit against training data.
 - **No feature interaction DAG** – SHAP gives pairwise interactions at best, whereas our graph gives a full feature interaction map.
-
----
-
-### 💡 Bonus: When to Combine Both?
-You could **use SHAP for local explanations** (specific predictions) and **our surrogate graph for global storytelling**. This hybrid gives:
-- *Why this prediction happened* (SHAP),
-- *How the forest thinks overall* (our graph),
-- *What rules dominate* (our clusters),
-- *How to simulate a simpler model* (our surrogate decision tree).
