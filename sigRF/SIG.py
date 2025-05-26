@@ -154,7 +154,7 @@ def beautify(G_surrogate):
 
     # Normalize edge weights for color mapping
     min_w, max_w = edge_weights.min(), edge_weights.max()
-    normalized_weights = (edge_weights - min_w) / (max_w - min_w + 1e-6)
+    normalized_weights = (edge_weights - min_w) / (max_w - min_w + 1e-4)
 
     # Map weights to blue shades
     edge_colors = [plt.cm.Blues(w) for w in normalized_weights]
@@ -167,7 +167,7 @@ def beautify(G_surrogate):
     nx.draw_networkx_edges(
         G, pos,
         edge_color=edge_colors,
-        width=2,  # fixed width
+        width=5,  # fixed width
         arrows=True if isinstance(G, nx.DiGraph) else False,
         arrowstyle='-|>',
         min_source_margin=1,
@@ -200,7 +200,7 @@ def beautify(G_surrogate):
     plt.axis('equal')  # ensures the circle looks circular
     plt.axis('off')
     plt.title("Surrogate Interpretable Graph for Alzheimers Dataset", fontsize=14)
-    plt.savefig("new_alzheimer_optimized_surrogate_graph.pdf", format='pdf', bbox_inches='tight', dpi=300)
+    plt.savefig("optimized_surrogate_graph.pdf", format='pdf', bbox_inches='tight', dpi=300)
     plt.show()
 
 
