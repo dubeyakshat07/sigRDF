@@ -90,7 +90,7 @@ Here’s why Our work is valuable:
 - This can lead to **new breakthroughs** in model transparency.
 ---
 
-## **Conclusion: The Value of The Work**
+## Conclusion:
 ✅ **Going beyond decision paths**: Individual decision paths are limited; global interpretability requires deeper insights.  
 ✅ **Graph representation is powerful**: It enables visualization of complex feature interactions across all trees.  
 ✅ **Clustering rules helps**: It summarizes thousands of rules into **clear decision strategies**.  
@@ -111,30 +111,58 @@ our method:
 
 ---
 
-## 🔄 Comparison: Surrogate Graph vs. SHAP Interaction Values
+## 🔄 Comparison: **sigRF** vs. **TreeSHAP**
 
-| Aspect | **our Surrogate Graph** | **SHAP Interaction Values** |
-|--------|---------------------------|------------------------------|
-| **Transparency** | High – Shows actual rules/features the model uses. | Medium – SHAP values are additive but not always easily explainable. |
-| **Structure Awareness** | Preserves feature hierarchy and paths from trees. | Abstracts away from actual model structure. |
-| **Global Interpretability** | Excellent – Shows average co-occurrence and rule strength across forest. | Weaker – Harder to globally interpret interactions beyond pairwise SHAP plots. |
-| **Rule-Based** | Yes – Derives and clusters real decision rules. | No – Outputs contributions for a given prediction. |
-| **Visual Simplicity** | High – Graph is pruned and optimized. | SHAP plots (force, dependence) can be overwhelming. |
-| **Faithfulness to Trees** | Very faithful – Graph and rules are extracted directly from trees. | Approximate – SHAP relies on game theory assumptions. |
-| **Customizability** | High – Graph structure, clustering, rule depth, etc., can be adjusted. | Limited – SHAP has a fixed format and logic. |
-
----
-
-### ✅ **Advantages Over SHAP**
-1. **More structural context** – SHAP gives importance but ignores the rule logic behind it.
-2. **Better for global interpretability** – our graph helps in seeing how features connect, co-occur, and dominate across many trees.
-3. **Summarization possible** – You can compress the forest’s logic into a simpler, human-readable surrogate (like a decision tree).
-4. **Custom logic** – Can choose clustering methods, optimize layout, adjust graph pruning, and tailor it to our dataset's complexity.
+| **Aspect**                  | **sigRF (Surrogate Interpretable Graph)**                                            | **TreeSHAP**                                                             |
+| --------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| **Transparency**            | ✅ High – Extracts and visualizes actual decision rules and feature paths.            | ⚠️ Medium – Provides additive attributions without exposing rule logic.  |
+| **Structure Awareness**     | ✅ Preserves the full path, split logic, and feature hierarchy from decision trees.   | ⚠️ Ignores underlying tree paths; based on feature marginalization.      |
+| **Global Interpretability** | ✅ Excellent – Shows how features co-occur, dominate, and interact across the forest. | ⚠️ Moderate – Pairwise interactions only; lacks full structural context. |
+| **Rule-Based**              | ✅ Yes – Clusters and summarizes real, interpretable rules from trees.                | ❌ No – Does not provide rule logic or extract decision paths.            |
+| **Visual Simplicity**       | ✅ High – Graphs are pruned, layout-optimized, and modular.                           | ⚠️ Limited – Force and dependence plots can be hard to read at scale.    |
+| **Faithfulness to Trees**   | ✅ Directly reflects true logic used by trees.                                        | ⚠️ Approximate – Based on game-theoretic surrogates.                     |
+| **Customizability**         | ✅ High – Flexible rule depth, clustering, interaction metrics, and layout.           | ❌ Low – Fixed algorithm with minimal parameter tuning.                   |
+| **Scalability**             | ✅ Handles high-dimensional data with pruning and abstraction.                        | ⚠️ Can become noisy or intractable on high-dimensional data.             |
+| **Interaction Mapping**     | ✅ Builds full feature interaction **DAG** with co-occurrence weights.                | ⚠️ Only shows pairwise interaction heatmaps.                             |
 
 ---
 
-### ⚠️ **Drawbacks SHAP Has That We Overcome**
-- **SHAP struggles with scale** – High-dimensional data can result in noisy or unreadable SHAP visualizations.
-- **No rule paths** – SHAP doesn't explain *why* a feature contributes, just that it does.
-- **Hard to validate** – SHAP values are less intuitive to validate or audit against training data.
-- **No feature interaction DAG** – SHAP gives pairwise interactions at best, whereas our graph gives a full feature interaction map.
+### ✅ **Advantages of sigRF Over TreeSHAP**
+
+1. **Structural Fidelity** – Maintains the original tree structure, making interpretations faithful and auditable.
+2. **Human-Centered Design** – Visuals are optimized for interpretability: interaction DAGs, rule clusters, and surrogate simplifications.
+3. **Rule Compression** – Transforms a forest into a few summarized, human-readable logic chains.
+4. **Flexibility** – Allows domain-specific adjustments: clustering, pruning depth, visual abstraction, etc.
+
+---
+
+### ⚠️ **TreeSHAP Limitations Addressed by sigRF**
+
+* **TreeSHAP abstracts rules** – It gives numerical attributions but no visibility into decision paths.
+* **Limited global view** – TreeSHAP’s interactions are pairwise and don’t scale well globally.
+* **Poor auditability** – Attribution values are hard to trace back to specific training logic.
+* **Low visual and structural context** – TreeSHAP lacks a structured, topological explanation of feature interactions.
+
+---
+If you found this work useful, please consider citing the following research work:
+
+### 📄 Citation
+
+Dubey, A., Anžel, A., & Hattab, G. (2025).
+**Surrogate Interpretable Graph for Random Decision Forests**.
+*arXiv:2506.01988*.
+[https://arxiv.org/abs/2506.01988](https://arxiv.org/abs/2506.01988)
+
+```bibtex
+@misc{dubey2025surrogateinterpretablegraphrandom,
+  title={Surrogate Interpretable Graph for Random Decision Forests}, 
+  author={Akshat Dubey and Aleksandar Anžel and Georges Hattab},
+  year={2025},
+  eprint={2506.01988},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG},
+  url={https://arxiv.org/abs/2506.01988}
+}
+```
+
+---
