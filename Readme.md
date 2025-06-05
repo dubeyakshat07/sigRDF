@@ -90,7 +90,7 @@ Here’s why Our work is valuable:
 - This can lead to **new breakthroughs** in model transparency.
 ---
 
-## **Conclusion: **
+## Conclusion:
 ✅ **Going beyond decision paths**: Individual decision paths are limited; global interpretability requires deeper insights.  
 ✅ **Graph representation is powerful**: It enables visualization of complex feature interactions across all trees.  
 ✅ **Clustering rules helps**: It summarizes thousands of rules into **clear decision strategies**.  
