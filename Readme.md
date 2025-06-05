@@ -111,9 +111,9 @@ our method:
 
 ---
 
-## 🔄 Comparison: **sigRF** vs. **TreeSHAP**
+## 🔄 Comparison: **sigRDF** vs. **TreeSHAP**
 
-| **Aspect**                  | **sigRF (Surrogate Interpretable Graph)**                                            | **TreeSHAP**                                                             |
+| **Aspect**                  | **sigRDF (Surrogate Interpretable Graph)**                                            | **TreeSHAP**                                                             |
 | --------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
 | **Transparency**            | ✅ High – Extracts and visualizes actual decision rules and feature paths.            | ⚠️ Medium – Provides additive attributions without exposing rule logic.  |
 | **Structure Awareness**     | ✅ Preserves the full path, split logic, and feature hierarchy from decision trees.   | ⚠️ Ignores underlying tree paths; based on feature marginalization.      |
@@ -127,7 +127,7 @@ our method:
 
 ---
 
-### ✅ **Advantages of sigRF Over TreeSHAP**
+### ✅ **Advantages of sigRDF Over TreeSHAP**
 
 1. **Structural Fidelity** – Maintains the original tree structure, making interpretations faithful and auditable.
 2. **Human-Centered Design** – Visuals are optimized for interpretability: interaction DAGs, rule clusters, and surrogate simplifications.
@@ -136,7 +136,7 @@ our method:
 
 ---
 
-### ⚠️ **TreeSHAP Limitations Addressed by sigRF**
+### ⚠️ **TreeSHAP Limitations Addressed by sigRDF**
 
 * **TreeSHAP abstracts rules** – It gives numerical attributions but no visibility into decision paths.
 * **Limited global view** – TreeSHAP’s interactions are pairwise and don’t scale well globally.
