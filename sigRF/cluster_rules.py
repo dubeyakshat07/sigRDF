@@ -2,7 +2,8 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.cluster import AgglomerativeClustering
 
 # Step 1: Vectorize the encoded rules using CountVectorizer or TfidfVectorizer
-  # You can also try TfidfVectorizer
+# You can also try TfidfVectorizer
+
 
 def rulesCluster(encoded_rules, vectorizer="CountVectorizer", showEx = True): 
     
@@ -34,6 +35,3 @@ def rulesCluster(encoded_rules, vectorizer="CountVectorizer", showEx = True):
             print("\n")
 
     return labels, clustered_rules
-
-
-
