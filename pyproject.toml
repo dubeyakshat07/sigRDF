@@ -1,0 +1,26 @@
+[project]
+name = "sigRF"
+version = "0.1.0"
+description = "Surrogate Interpretable Graph for Random Decision Forests: interpretable, rule-based, and graph-based global explanations for Random Forest models."
+authors = [
+  { name = "Akshat Dubey" },
+  { name = "Aleksandar Anžel" },
+  { name = "Georges Hattab" }
+]
+readme = "Readme.md"
+requires-python = ">=3.8"
+dependencies = [
+  "numpy>=1.20",
+  "pandas>=1.3",
+  "scikit-learn>=1.0",
+  "matplotlib>=3.4",
+  "networkx>=2.6",
+  "pulp>=2.6",
+  "jupyter>=1.1.1"
+]
+
+[project.urls]
+Homepage = "https://arxiv.org/abs/2506.01988"
+
+[tool.setuptools]
+packages = ["sigRF"]
