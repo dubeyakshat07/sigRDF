@@ -1,22 +1,11 @@
-
 import numpy as np
-import pandas as pd
 import re
 import matplotlib.pyplot as plt
 import networkx as nx
-from sklearn.datasets import load_breast_cancer
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.tree import _tree
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.cluster import AgglomerativeClustering
-import plotly.express as px
-from pulp import LpProblem, LpVariable, LpMaximize, lpSum, LpStatus, value
-from sklearn.decomposition import PCA
-
-import seaborn as sns
-from sklearn.ensemble import RandomForestClassifier
+from pulp import LpProblem, LpVariable, LpMaximize, lpSum, LpStatus
 
 # Mapping from encoded feature names to actual feature names
+
 
 def create_sig(columns, encoded_rules):
     feature_mapping = {f"FEAT_{i}": feature for i, feature in enumerate(columns)}
@@ -202,6 +191,3 @@ def beautify(G_surrogate):
     plt.title("Surrogate Interpretable Graph for Alzheimers Dataset", fontsize=14)
     plt.savefig("optimized_surrogate_graph.pdf", format='pdf', bbox_inches='tight', dpi=300)
     plt.show()
-
-
-
