@@ -14,6 +14,8 @@ Spin up a Jupyter notebook server to try out the package:
 jupyter notebook
 ```
 
+Un-comment the variable `decision_paths` to see the decision paths from sigRF.
+
 ## **1. Overcoming the Limitations of Decision Path Analysis in Random Forest**
 ### **Existing Decision Path Methods Are Limited**
 While we can extract decision paths from the Random Forest, these methods **only tell us how a specific instance is classified** but fail to provide a **global understanding** of how the model behaves as a whole.
