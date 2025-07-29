@@ -1,18 +1,6 @@
 # Custom rule encoder that preserves the structure
-import numpy as np
-import pandas as pd
-import re
-import matplotlib.pyplot as plt
-import networkx as nx
-from sklearn.datasets import load_breast_cancer
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.tree import _tree
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.cluster import AgglomerativeClustering
-import plotly.express as px
-from pulp import LpProblem, LpVariable, LpMaximize, lpSum, LpStatus, value
-from sklearn.decomposition import PCA
 from sklearn.preprocessing import LabelEncoder
+
 
 def encode_rule_structure(rules, columns):
     encoded_rules = []
